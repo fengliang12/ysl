@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>YSL圣罗兰尊享礼盒_YSL圣罗兰美妆中国官网</title>
+    <link rel="icon" href="https://res.yslbeautycn.com/favicon.ico">
+    <script src="js/common.js"></script>
+    <script type="text/javascript"
+            src="http://api.map.baidu.com/api?v=2.0&ak=YAwzfVIntL0AWA4Z1BSAZ6LIlyQIGj84"></script>
+    <script src="js/pf2.js"></script>
+	<link rel="stylesheet" href="css/YSLpf.css">
+    <meta name="viewport" content="width=device-width,
+		user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0"/>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+
+</head>
+<body>
+     <div class="layout">
+         <div class="myacount-content">
+             <div class="myacount-header-handle">
+                 <ul>
+                     <li>
+                        <a href="YSL.html">首页</a>
+                     </li>
+                     <li><span>&gt;</span></li>
+                     <li>
+                        <a href="#">专柜查询</a>
+                     </li>
+                 </ul>
+             </div>
+             <div class="myacount-search">
+                 <h1>专柜查询</h1>
+                 <div class="myacount-search-store">
+                     <h2>门店查找 <span>请选择或输入您的查询条件</span> </h2>
+                 </div>
+                 <div class="myacount-s-p">
+                     <h2>按省市区查找</h2>
+                     <form action="POST">
+                         <div class="search-flex">
+                            <select id="province" name="province"></select>
+                            <select id="city" name="city"><option value="">市</option></select>
+                            <select id="area" name="area"><option value="">县/区</option></select>
+                         </div>
+                         <input id="search1"  type="button" value="搜索"  />
+                     </form>
+                     <h2>按街道查询</h2>
+                     <input id="cityName" type="text"  />
+                     <p class="zz" id="zz">请输入查询条件</p>
+                     <input  id="search2" type="button" value="查询"  />
+                     <h2>离您最近的门店</h2>
+                    </div>
+                 <div class="myacount-search-address">
+                     <p>西安金华珠江店</p>
+                     <p>地址：陕西省西安市碑林区南关正街南门珠江金花商场1层圣罗兰</p>
+                     <p>联系电话：029-89358092</p>
+                     <a href="#">查看详情&gt;</a>
+                 </div>
+             </div>
+             <div class="myacount-map clearfix" >
+                 <div class="mapandlist">
+                     <div class="map" id="map">地图</div>
+                     <div class="list" id="list">列表</div>
+                 </div>
+                 <div id="allmap" ></div>
+                 <div id="alllist" >
+                     <p>西安金华珠江店</p>
+                     <p>地址：陕西省西安市碑林区南关正街南门珠江金花商场1层圣罗兰</p>
+                     <p>联系电话：029-89358092</p>
+                 </div>
+             </div>
+         </div>
+     </div>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+/**
+ * Created by student on 2018/11/15.
+ */
+
+window.onload=function () {
+    var a=getRequest();
+    console.log("class:"+a['class']);
+    queryData(a);
+
+
+}
+
+function getRequest() {
+    var url=location.search;
+    var theRequest=new Object();
+    if(url.indexOf("?")!=-1){
+        var str=url.substr(1);
+        strs=str.split("&");
+        for(var i=0;i<strs.length;i++){
+            theRequest[strs[i].split("=")[0]]=decodeURIComponent(strs[i].split("=")[1]);
+        }
+
+    }
+    return theRequest;
+}
+function queryData(a) {
+    queryAjax("get","php/Cosmetics.php","class="+a['class']);
+}
+function queryAjax(type,url,data) {
+    var ul=document.querySelector(".list-product ul")
+    var ajax=new XMLHttpRequest();
+    if(data){
+        ajax.open(type,url+"?"+data);
+    }else{
+        ajax.open(type,url);
+    }
+    ajax.send();
+    ajax.onreadystatechange=function () {
+        if(ajax.readyState==4 && ajax.status==200){
+            // console.log(ajax.responseText);
+            var json=JSON.parse(ajax.responseText);
+            // console.log("template"+json);
+            var jsonOne=json[0];
+            var obj={
+                data:jsonOne
+            }
+            var html=template("template",obj);
+            ul.innerHTML=html;
+
+        }
+    }
+}
+

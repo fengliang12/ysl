@@ -1,0 +1,200 @@
+*{
+    padding: 0;
+    margin:0;
+}
+.layout{
+    width: 100%;
+    height: 100%;
+    max-width:640px;
+    margin: 0px auto;
+    position: relative;
+    box-sizing: border-box;
+}
+.myacount-content{
+    width: 94%;
+    margin: 0px auto;
+    position: relative;
+    box-sizing: border-box;
+}
+.myacount-header-handle{
+    position: relative;
+    width:100%;
+    height: 30px;
+    color: #999;
+    font-size: 12px;
+    line-height: 30px;
+    margin-top: 10px;
+
+}
+.myacount-header-handle ul{
+    position: relative;
+    width: 100%;
+    list-style: none;
+    clear: both;
+}
+.myacount-header-handle ul li{
+    float: left;
+    margin-right: 10px;
+}
+
+.myacount-header-handle ul li a{
+    text-decoration: none;
+    color: #999;
+}
+.myacount-search{
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+
+}
+.myacount-search h1{
+    position: relative;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: .25px;
+}
+.myacount-search-store{
+    border-bottom: 1px solid black;
+    margin-top: 15px;
+    padding-bottom: 10px;
+}
+.myacount-search-store h2{
+    font-size:13px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: .25px;
+}
+.myacount-search-store h2 span{
+    color: #999;
+}
+.myacount-s-p{
+    width: 100%;
+    position: relative;
+    margin-top: 15px;
+    border-bottom: 1px solid black;
+
+}
+.myacount-s-p h2{
+    font-size:13px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: .25px;
+    margin-bottom: 12px;
+}
+.search-flex{
+    margin-top: 10px;
+    position: relative;
+    width: 100%;
+    display: flex;
+}
+
+.search-flex select{
+    flex: 1;
+    justify-content: center;
+    width: 25%;
+    height: 40px;
+    margin-right: 15px;
+    line-height: 40px;
+    padding: 0px 10px;
+    border: 1px solid #999;
+}
+.search-flex select:last-of-type{
+   margin-right: 0px;
+}
+#search1,#search2{
+    margin-top: 15px;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    background-color: black;
+    color: white;
+    font-size: 15px;
+    border: 1px solid black;
+    box-sizing: content-box;
+    margin-bottom: 15px;
+}
+#search1:active{
+    background-color: white;
+    color: black;
+}
+#search2:active{
+    background-color: white;
+    color: black;
+}
+.myacount-s-p input{
+    width: 100%;
+    height: 30px;
+    border: 1px solid #999;
+    margin-bottom: 15px;
+
+}
+.myacount-s-p .zz{
+    color: red;
+    font-size: 14px;
+    display: none;
+}
+.myacount-search-address{
+    width: 100%;
+    color: black;
+    font-size: 12px;
+    line-spacing: .25px;
+}
+.myacount-search-address p{
+    margin: 12px 0px;
+
+}
+.myacount-search-address a{
+    color: black;
+}
+
+.myacount-map{
+    width: 100%;
+    height: 550px;
+    position: relative;
+    margin-bottom: 20px;
+}
+#allmap,#alllist{
+    width: 100%;
+    height: 500px;
+    margin-top: 10px;
+    position: absolute;
+    top: 30px;
+    left: 0px;
+    color: black;
+
+}
+#alllist{
+    display: none;
+}
+#alllist p{
+    font-size: 15px;
+    line-spacing: .25px;
+}
+.clearfix:after {
+    content:"";
+    display: block;
+    clear:both;
+}
+.mapandlist{
+    margin-top: 15px;
+    border: 1px solid black;
+    width: 100%;
+    height: 25px;
+    display: flex;
+}
+.map,.list{
+    width: 50%;
+    height: 25px;
+    flex: 1;
+    text-align: center;
+    line-height: 25px;
+    font-size: 15px;
+    background-color: white;
+}
+.map{
+    background-color: black;
+    color: white;
+}
+

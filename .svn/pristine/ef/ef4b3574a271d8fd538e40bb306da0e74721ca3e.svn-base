@@ -1,0 +1,77 @@
+var Land_text = document.getElementById("Land_text");
+var Land_password = document.getElementById("Land_password");
+var succeed = document.getElementById("succeed");
+
+//----正则判断----
+function reg_text(that){
+	var Land_tel_email = /^1\d{10}$|^\w+@\w+\.com$/;
+	if(!Land_tel_email.test(that.value)){
+		document.getElementById("inner_Land_text").innerText = "请输入有效的邮箱或者电话号码！"
+	}else{
+		document.getElementById("inner_Land_text").innerText = "";
+	}
+}
+function reg_password(that){
+	var Land_pwd = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,16}$/;
+	if(!Land_pwd.test(that.value)){
+		document.getElementById("inner_Land_password").innerText = "密码格式错误！";
+	}else{
+		document.getElementById("inner_Land_password").innerText = "";
+	}
+	succeed.innerText = "";
+}
+Land_text.onblur = function(){
+	var that = this ;
+	reg_text(that);
+	Remember();
+}
+Land_password.onblur = function(){
+	var that = this ;
+	reg_password(that);
+}
+
+//----登陆-----
+var Land_PHP = document.getElementById("Land_PHP");
+
+Land_PHP.onclick = function(){
+	var name = document.getElementById("Land_text").value;
+	var pwd = document.getElementById("Land_password").value;
+	var remPwd = document.getElementById("changestyle").value;
+	var AjaxRequest = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+	
+	AjaxRequest.open("POST","PHP_Server/Land.php");
+	AjaxRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	
+	AjaxRequest.send("name="+name+"&password="+pwd+"&remPwd="+remPwd);
+	
+	AjaxRequest.onreadystatechange = function(){
+		if(this.readyState == 4){
+			if(this.responseText == "fail"){
+				succeed.innerText = "密码错误！";
+			}else if(this.responseText == "notexist"){
+				succeed.innerText = "账户不存在！";
+			}else{
+				location.href = this.responseText;
+			}
+		}
+	}
+}
+function Remember(){
+	var AjaxRequest_rem = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+	AjaxRequest_rem.open("POST","PHP_Server/Session.php");
+	AjaxRequest_rem.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	
+	var name = document.getElementById("Land_text").value;
+	
+	AjaxRequest_rem.send("name="+name);
+	
+	AjaxRequest_rem.onreadystatechange = function(){
+		if(this.readyState == 4){
+			if(this.responseText){
+				document.getElementById("Land_password").value = this.responseText;
+			}else{
+				pwd = "";
+			}
+		}
+	}
+}

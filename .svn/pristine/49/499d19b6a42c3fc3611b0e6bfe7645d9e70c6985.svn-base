@@ -1,0 +1,11 @@
+<php
+$dsn="mysql:host=localhost;dbname=ysl;charset=UTF8";
+$username="root";
+$password="root";
+try{
+$pdo=new PDO($dsn,$username,$password);
+$result=$pdo->query("select *from cart");
+echo $result;
+}catch(PDOException $e){
+}
+?>

@@ -1,0 +1,12 @@
+$(function(){
+    $("#close").click(function(){
+        $(".top").css("display","none");
+    })
+
+     /*  var index=0;
+        $(".indicators ol li").click=function(){
+            index=$(this).index();
+            $(this).addClass("active").siblings().removeClass("active");
+           $(".banner ul li").eq(index).fadeIn().siblings().fadeOut();
+        }*/
+});

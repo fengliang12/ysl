@@ -1,0 +1,22 @@
+<?php
+header("content-type:text/html;charset=utf-8");
+$dsn = "mysql:host=localhost;dbname=ysl;charset=UTF8";
+$username="root";
+$password="root";
+$arr=[];
+try{
+    $pdo=new PDO($dsn,$username,$password);
+    $result = $pdo->query("select * from cart");
+    foreach ($result as $row) {
+          $arr[]=$row;
+    }
+    if($arr==null){
+     echo 0;
+    }else{
+     $json=json_encode($arr);
+     echo $json;
+    }
+
+}catch(PDOException $e){
+}
+?>
